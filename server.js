@@ -5,13 +5,14 @@ const path = require('path');
 const fs = require('fs');
 const routes = require('./routes');
 
+app.use(express.static(path.join(__dirname,'public')));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use(routes);
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.sendFile(path.join(__dirname,'./public/index.html'))
   })
 
 app.listen(port, () => {

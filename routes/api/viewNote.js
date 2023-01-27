@@ -10,7 +10,7 @@ router.get('/:id',(req,res)=>{
         dbData=JSON.parse(data);
         var noteSel = dbData[noteId];
         console.log(`Note Selected: ${noteSel.chatMsg}`)
-        res.send(noteSel.chatMsg);
+        res.send(noteSel);
     });
 });
 
