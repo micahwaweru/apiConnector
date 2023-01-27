@@ -25,10 +25,17 @@ h1, h3{
 /* Trying to make a ticker, here's the docs */
 /* https://code-boxx.com/html-css-news-ticker-horizontal-vertical/ */
 
+.tickerWrap{
+  margin-top: 15%;
+}
+
 /* (A) FIXED WRAPPER */
 .hwrap {
+    height: 200px;
     overflow: hidden; /* HIDE SCROLL BAR */
-    background: #eee;
+    background: black;
+    
+    padding-top: 125px;
   }
    
   /* (B) MOVING TICKER WRAPPER */
@@ -36,18 +43,22 @@ h1, h3{
   
   /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
   .hitem {
+    font-family: "Orbitron";
+    color:#1594E3;
+    font-size: xx-large;
     flex-shrink: 0;
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
     text-align: center;
+  
   }
    
   /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
   /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
   @keyframes tickerh {
     0% { transform: translate3d(100%, 0, 0); }
-    100% { transform: translate3d(-400%, 0, 0); }
+    100% { transform: translate3d(-300%, 0, 0); }
   }
-  .hmove { animation: tickerh linear 15s infinite; }
+  .hmove { animation: tickerh linear 35s infinite; }
   .hmove:hover { animation-play-state: paused; }
