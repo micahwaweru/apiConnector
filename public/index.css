@@ -1,0 +1,82 @@
+body{
+    /* background-color: #6441A5; */
+    background-color: #201c2b;
+    color: white;
+    font-family: "Martel", sans-serif;
+}
+
+h1, h3{
+    text-align: center;
+}
+
+
+.messageCont{
+    /* border-style: solid; */
+    width: auto;
+    text-align: center;
+}
+
+#messagePreview{
+  margin: auto;
+  text-transform: uppercase;
+}
+
+
+/* Trying to make a ticker, here's the docs */
+/* https://code-boxx.com/html-css-news-ticker-horizontal-vertical/ */
+
+.tickerWrap{
+  margin-top: 15%;
+}
+
+/* (A) FIXED WRAPPER */
+.hwrap {
+    height: 200px;
+    overflow: hidden; /* HIDE SCROLL BAR */
+    background: black;
+    
+    padding-top: 125px;
+  }
+   
+  /* (B) MOVING TICKER WRAPPER */
+  .hmove { display: flex; }
+  
+  /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+  .hitem {
+    font-family: "Orbitron";
+    color:#1594E3;
+    font-size: xx-large;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+  
+  }
+   
+  /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+  /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+  @keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-300%, 0, 0); }
+  }
+  .hmove { animation: tickerh linear 35s infinite; }
+  .hmove:hover { animation-play-state: paused; }
+
+  .paused {animation-play-state: paused;}
+
+.buttonCont{
+  display: flex;
+  justify-content: center;
+}
+
+  .btns{
+  background-color: #6441A5;
+  color: white;
+  font-size: medium;
+  border:none;
+  border-radius: 2px;
+  padding: 10px;
+  margin-top: 2.5%;
+  margin-right: 10px;
+}

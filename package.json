@@ -2,9 +2,10 @@
   "name": "apiconnector",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "public/main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tailwindcss -i ./public/input.css -o ./public/main.css",
+    "watch": "tailwindcss -i ./public/input.css -o ./public/main.css --watch"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/micahwaweru/apiConnector#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
