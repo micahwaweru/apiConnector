@@ -19,9 +19,6 @@ var viewNoteReq = function(){
         type:"Get",
         success: function(result){
             console.log(result)
-            if(areElements!=false){
-                elDeleter();
-            }
             userObj.userNm = result.userName;
             userObj.userDn = result.donationAmt;
             userObj.userMsg = result.chatMsg;
@@ -37,6 +34,7 @@ var elDeleter = function(){
     document.getElementById('uNField').remove();
     document.getElementById('dNField').remove();
     document.getElementById('cHField').remove();
+    
 }
 
 var tickerBuilder = function(obj){
@@ -91,8 +89,9 @@ var refreshBtnHandler = function(){
 viewNoteReq();
 
 if(isPaused!=true){
-    setTimeout(()=>{
+    setInterval(()=>{
         viewNoteReq();
+        elDeleter();
     },35000)
 }
 
